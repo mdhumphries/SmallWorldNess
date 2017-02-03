@@ -54,8 +54,8 @@ Lrand_mean = mean(Lrand(Lrand < inf));
 
 %% do Monte-Carlo test of disitribution of S in ER random graph
 
-[I,P,Sb] = SsampleER(n,K,m,I,Num_S_repeats,S_ws,FLAG_Cws);
+[I,P,Sb] = SsampleER(n,K,m,I,Num_S_repeats,S_ws,FLAG_Cws);  % for Sws here
 
 % check how many samples ended up being used to calculate P-value
 Nsamps = numel(Sb);
-Pmax = 1 / Nsamps
+Pmax = 1 / Nsamps;
