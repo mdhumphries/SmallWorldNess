@@ -1,0 +1,19 @@
+function [Lrand,Crand] = NullModel_L_C(n,m,Nrepeats)
+
+% NULLMODEL_L_C Monte Carlo estimates  path-length and clustering of an ER random graph
+% [C,L] = ER_EXPECTED_L_C(K,N) for a network of N nodes and mena degree K, 
+% computes the expected shortest path-length L and expected clustering 
+% coefficient C if that network was an Erdos-Renyi random graph
+%
+% Mark Humphries 3/2/2017
+
+
+for iE = 1:Nrepeats
+    ER = random_graph(n,0,m,'undirected');
+    [~,D] = reachdist(ER);  % returns Distance matrix of all pairwise distances
+    Lrand(iE) = mean(D(:));  % mean shortest path-length: including self-loops
+    
+    
+    
+    keyboard
+end

@@ -9,8 +9,6 @@ function [S,C,L] = small_world_ness(A,LR,CR,FLAG)
 % FLAG is a number indicating which small-world-ness value to compute:
 %   1 - raw form with Cws 
 %   2 - raw form with transitivity C (no. of triangles)
-%   3 - magnitude form with Cws
-%   4 - magnitude form with transitivity C (no. of triangles)
 %
 % Also returns a 2 element array O  [C L], which are the mean clustering coefficient C 
 % and mean shortest path length L of A.
@@ -23,20 +21,13 @@ L = mean(D(:));  % mean shortest path-length: including self-loops
 
 % calculate required form of C
 switch FLAG
-    case {1,3}
-        C = clustering_coef_bu(A);
-    case {2,4}
+    case 1
+        c = clustering_coef_bu(A);  % vector of each node's C_ws
+        C = mean(c);  % mean C
+    case 2
         C = clusttriang(A);
 end
 
 Ls = L / LR;
 Cs =  C / CR;
 S = Cs / Ls;
-
-% determine which form is used
-switch FLAG
-    case {3,4}
-        S = log10(S);
-end
-
-other = [C L];
