@@ -7,6 +7,8 @@ Includes functions for: <br>
 computing small-world-ness from data networks <br>
 statistically testing the data network divergence from an E-R random graph
 
+See Computing_And_Testing_S_On_Data_Network.m for examples of all analyses on a test network
+
 ============================
 Includes PDFs of the original papers: <br>
 * Humphries, M. D.; Gurney, K. & Prescott, T. J. (2006) The brainstem reticular formation is a small-world, not scale-free, network. _Proceedings of the Royal Society B. Biological Sciences_, 273, 503-511
